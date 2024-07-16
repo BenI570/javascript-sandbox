@@ -1,2 +1,1 @@
-// export let name = 'Ben';
-// export let v = 'v';
+export const getBody = document.querySelector('body');

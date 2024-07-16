@@ -1,6 +1,6 @@
-// export function greet(name) {
-// 	return `Hello, ${name}`;
-// }
+import { navigation_items } from './seedData.js';
+import { getBody } from './variables.js';
+
 export function generateNavbar(items) {
 	const navbar = document.querySelector('.d-navbar');
 
@@ -29,27 +29,26 @@ export function generateNavbar(items) {
 }
 
 export function toggleDarkMode() {
-	const body = document.querySelector('body');
 	const lightModeBtn = document.getElementById('lightMode');
 	const darkModeBtn = document.getElementById('darkMode');
 
-	const isDarkMode = localStorage.getItem('darkMode');
+	const isDarkMode = localStorage.getItem('darkMode') === false;
 
 	if (isDarkMode) {
-		body.classList.add('darkMode');
+		getBody.classList.add('darkMode');
 		darkModeBtn.classList.add('hidden');
 		lightModeBtn.classList.remove('hidden');
 	}
 
 	lightModeBtn.addEventListener('click', () => {
-		body.classList.remove('darkMode');
+		getBody.classList.remove('darkMode');
 		darkModeBtn.classList.remove('hidden');
 		lightModeBtn.classList.add('hidden');
 		localStorage.setItem('darkMode', 'disabled');
 	});
 
 	darkModeBtn.addEventListener('click', () => {
-		body.classList.add('darkMode');
+		getBody.classList.add('darkMode');
 		darkModeBtn.classList.add('hidden');
 		lightModeBtn.classList.remove('hidden');
 		localStorage.setItem('darkMode', 'enabled');
