@@ -3,13 +3,69 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Javascript Sandbox</title>
+		<title>JavaScript</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<!--Font Awesome CDN-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		/>
+		<!-- Google Fonts: Nunito -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
-		<h1>Sandbox</h1>
+	<body class="nunito">
+		<header>
+			<div class="hero flex">
+				<span>Hello Worlfdsafdsd</span>
+			</div>
+			<div class="d-navbar flex container"></div>
+			<div class="navbar flex container">
+				<span>Logo</span>
+				<nav>
+					<ul class="flex">
+						<a href="#"><li>Link 1</li></a>
+						<a href="#"><li>Link 2</li></a>
+						<a href="#"><li>Link 3</li></a>
+						<a href="#"><li>Link 4</li></a>
+						<a href="#"><li>Link 5</li></a>
+						<a href="#"><li>Link 6</li></a>
+					</ul>
+				</nav>
+				<div class="flex">
+					<button id="lightMode" class="btn hidden">
+						<i class="fa-solid fa-sun"></i>
+					</button>
+					<button id="darkMode" class="btn">
+						<i class="fa-solid fa-moon"></i>
+					</button>
+				</div>
+			</div>
+		</header>
+		<img
+			src="public/mountain.jpg"
+			alt="Mountain Photo by Pascal Debrunner"
+			class="mountainImg"
+		/>
+		<section>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
+				illum. Recusandae voluptatibus commodi pariatur quae ipsam
+				soluta quibusdam est consequuntur quas, tempora debitis neque
+				perspiciatis perferendis saepe maxime quisquam mollitia
+				necessitatibus? Assumenda dolorum corporis expedita perspiciatis
+				officiis vero minus architecto excepturi hic corrupti quia id
+				at, ab asperiores ex fuga?
+			</p>
+		</section>
+		<a href="../"><i class="fa-solid fa-gear"></i>Back to Examples</a>
 	</body>
 	<script src="js/variables.js" type="module"></script>
 	<script src="js/utils.js" type="module"></script>
-	<script src="js/main.js" type="module"></script>
 	<script src="js/seedData.js"></script>
+	<script src="js/main.js" type="module"></script>
 </html>
