@@ -1,0 +1,97 @@
+:root {
+	--text: black;
+	--fs-text: 16px;
+	--hero-height: 30rem;
+}
+* {
+	padding: 0;
+	margin: 0;
+	/* outline: 1px solid orangered; */
+}
+p {
+	font-size: calc(var(--fs-text) * 2);
+}
+body {
+	font-family: 'Nunito', sans-serif;
+}
+a {
+	text-decoration: none;
+	position: relative;
+	color: var(--text);
+}
+a:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	background-color: orangered;
+	height: 3px;
+	bottom: -20px;
+	transform: scaleX(0);
+	transition: all 0.4s ease-in-out;
+}
+a:hover:after {
+	visibility: visible;
+	transform: scaleX(1);
+}
+li {
+	list-style: none;
+}
+/* Util */
+.container {
+	width: min(60rem, 100% - 4rem);
+	margin-inline: auto;
+}
+.hidden {
+	display: none;
+}
+.flex {
+	display: flex;
+}
+header {
+	margin-bottom: 32px;
+}
+.navbar {
+	justify-content: space-between;
+	font-size: 25px;
+	color: var(--text);
+}
+.navbar li {
+	margin-inline: 10px;
+}
+.btn {
+	background-color: transparent;
+	border: none;
+	color: var(--text);
+}
+.btn i {
+	font-size: 32px;
+}
+.hero {
+	height: var(--hero-height);
+	display: grid;
+	justify-content: center;
+	justify-content: center;
+	background-image: url('public/landscape.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.mountainImg {
+	width: 500px;
+	height: auto;
+	border-radius: 25px;
+}
+body .navbar nav ul > .first span {
+	font-size: 3rem;
+}
+/*@media (min-width: 800px) {
+	a {
+	}
+}*/
+/* Modes */
+.darkMode {
+	background-color: black;
+	--text: whitesmoke;
+}
+.example {
+	background-color: blue;
+}
