@@ -13,6 +13,7 @@ p {
 }
 body {
 	font-family: 'Nunito', sans-serif;
+	/* background-image: url(../public/mountain.jpg); */
 }
 a {
 	text-decoration: none;
@@ -50,12 +51,12 @@ li {
 header {
 	margin-bottom: 32px;
 }
-.navbar {
+.d-navbar {
 	justify-content: space-between;
 	font-size: 25px;
 	color: var(--text);
 }
-.navbar li {
+.d-navbar li {
 	margin-inline: 10px;
 }
 .btn {

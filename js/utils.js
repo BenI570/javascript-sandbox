@@ -27,10 +27,36 @@ export function generateNavbar(items) {
 		nav.appendChild(a);
 		const li = createElm('li');
 		a.appendChild(li);
+
+		const buttonDiv = createElm('div');
+		buttonDiv.classList.add('flex');
+		navbar.appendChild(buttonDiv);
+
+		const lightModeButton = createElm('button');
+		lightModeButton.classList.add('btn', 'hidden');
+		lightModeButton.setAttribute('id', 'lightMode');
+		buttonDiv.appendChild(lightModeButton);
+
+		const lightModeIcon = createElm('i');
+		lightModeIcon.classList.add('fa-solid', 'fa-sun');
+		lightModeButton.appendChild(lightModeIcon);
+
+		const darkModeButton = createElm('button');
+		darkModeButton.classList.add('btn');
+		darkModeButton.setAttribute('id', 'darkMode');
+		buttonDiv.appendChild(darkModeButton);
+
+		const darkModeIcon = createElm('i');
+		darkModeIcon.classList.add('fa-solid', 'fa-moon');
+		darkModeButton.appendChild(darkModeIcon);
 	});
 
 	console.log(navbar);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+	generateNavbar(navigation_items);
+});
 
 export function toggleDarkMode() {
 	const lightModeBtn = document.getElementById('lightMode');
@@ -59,7 +85,3 @@ export function toggleDarkMode() {
 	});
 	console.log(localStorage);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-	generateNavbar(navigation_items);
-});
