@@ -1,3 +1,7 @@
-import { toggleDarkMode } from './utils.js';
+import { toggleDarkMode, generateNavbar } from './utils.js';
+import { navigation_items } from './seedData.js';
 
-toggleDarkMode();
+document.addEventListener('DOMContentLoaded', () => {
+	generateNavbar(navigation_items);
+	toggleDarkMode();
+});

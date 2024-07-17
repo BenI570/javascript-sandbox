@@ -1,5 +1,4 @@
-import { navigation_items } from './seedData.js';
-import * as vars from './variables.js';
+import * as vars from './variables.js'; // imports body variable
 
 function createElm(element) {
 	return document.createElement(element);
@@ -22,41 +21,37 @@ export function generateNavbar(items) {
 	items.forEach((item) => {
 		const a = createElm('a');
 		a.href = item.link;
-		a.innerHTML = '<i class="' + item.icon + '"></i>';
-		a.appendChild(document.createTextNode(item.name));
-		nav.appendChild(a);
 		const li = createElm('li');
+		li.innerHTML = '<i class="' + item.icon + '"></i>';
+		li.appendChild(document.createTextNode(item.name));
 		a.appendChild(li);
-
-		const buttonDiv = createElm('div');
-		buttonDiv.classList.add('flex');
-		navbar.appendChild(buttonDiv);
-
-		const lightModeButton = createElm('button');
-		lightModeButton.classList.add('btn', 'hidden');
-		lightModeButton.setAttribute('id', 'lightMode');
-		buttonDiv.appendChild(lightModeButton);
-
-		const lightModeIcon = createElm('i');
-		lightModeIcon.classList.add('fa-solid', 'fa-sun');
-		lightModeButton.appendChild(lightModeIcon);
-
-		const darkModeButton = createElm('button');
-		darkModeButton.classList.add('btn');
-		darkModeButton.setAttribute('id', 'darkMode');
-		buttonDiv.appendChild(darkModeButton);
-
-		const darkModeIcon = createElm('i');
-		darkModeIcon.classList.add('fa-solid', 'fa-moon');
-		darkModeButton.appendChild(darkModeIcon);
+		ul.appendChild(a);
 	});
+
+	const buttonDiv = createElm('div');
+	buttonDiv.classList.add('flex');
+	navbar.appendChild(buttonDiv);
+
+	const lightModeButton = createElm('button');
+	lightModeButton.classList.add('btn', 'hidden');
+	lightModeButton.setAttribute('id', 'lightMode');
+	buttonDiv.appendChild(lightModeButton);
+
+	const lightModeIcon = createElm('i');
+	lightModeIcon.classList.add('fa-solid', 'fa-sun');
+	lightModeButton.appendChild(lightModeIcon);
+
+	const darkModeButton = createElm('button');
+	darkModeButton.classList.add('btn');
+	darkModeButton.setAttribute('id', 'darkMode');
+	buttonDiv.appendChild(darkModeButton);
+
+	const darkModeIcon = createElm('i');
+	darkModeIcon.classList.add('fa-solid', 'fa-moon');
+	darkModeButton.appendChild(darkModeIcon);
 
 	console.log(navbar);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-	generateNavbar(navigation_items);
-});
 
 export function toggleDarkMode() {
 	const lightModeBtn = document.getElementById('lightMode');
